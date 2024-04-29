@@ -50,7 +50,6 @@
         .then(result => {
             result2 = JSON.stringify(JSON.parse(result).body);
             if(result2 == "\"true\""){
-                localStorage.setItem('loggedIn', true);
                 window.location.href = "catalogue.html";
             }else{
                 alert("Wrong Credentials! Login blocked!")
