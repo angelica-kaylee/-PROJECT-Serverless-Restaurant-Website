@@ -44,15 +44,18 @@
             body: raw,
             redirect: 'follow'
         };
+        console.log("One");
         // make API call with parameters and use promises to get response
         fetch("https://5p1sstpwn9.execute-api.us-east-1.amazonaws.com/dev/login", requestOptions)
         .then(response => response.text())
         .then(result => {
             result2 = JSON.stringify(JSON.parse(result).body);
+            console.log("Two");
             if(result2 == "\"true\""){
-                window.location.href = "catalogue.html";
+              console.log("Three");
+              window.location.href = "catalogue.html";
             }else{
-                alert("Wrong Credentials! Login blocked!")
+              alert("Wrong Credentials! Login blocked!")
             }
         })
         .catch(error => console.log('error', error));
@@ -184,8 +187,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Register</h2>
-        <p>Simplify Your Experience - Register Now</p>
+        <h2>Login</h2>
       </div><!-- End Section Title -->
 
       <div class="container">
